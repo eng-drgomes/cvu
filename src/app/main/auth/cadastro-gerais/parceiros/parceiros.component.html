@@ -1,0 +1,219 @@
+<div class="fundo page-layout simple fullwidth" fusePerfectScrollbar> <!--  -->
+  <div class="pr-12 pl-12 pt-12 pb-12" *ngIf="exibir">
+      
+    <div class="funds container pr-0 pl-12 pt-12 pb-12" fxLayout
+        fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        + INSERIR NOVO PARCEIRO
+    </div>
+
+    <br><br>
+
+    <div class="formGroup funds pr-10 pl-1 pt-20 pb-20">
+
+      <form [formGroup]="formParceiros" autocomplete="off">
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+
+          <mat-form-field fxFlex="50" appearance="outline" [style.fontSize]="text">
+              <mat-label> NOME DO PARCEIRO </mat-label>
+              <input type="text" class="form-control" matInput placeholder="NOME PARCEIRO" formControlName="nome">
+          </mat-form-field>
+
+          <mat-form-field fxFlex="50" appearance="outline" [style.fontSize]="text">
+              <mat-label> RESPONSÁVEL </mat-label>
+              <input type="text" matInput placeholder="RESPONSÁVEL" formControlName="responsavel">
+          </mat-form-field>
+
+        </div>
+
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+
+          <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+            <mat-label> E-MAIL CONTATO 1 </mat-label>
+            <input type="email" matInput placeholder="E-MAIL" formControlName="email1">
+          </mat-form-field>
+
+          <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+            <mat-label> E-MAIL CONTATO 1 </mat-label>
+            <input type="email" matInput placeholder="E-MAIL" formControlName="email2">
+          </mat-form-field>
+
+          <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+            <mat-label> TELEFONE CONTATO 1</mat-label>
+            <input type="tel" matInput placeholder="TELEFONE 1" formControlName="telefone1">
+          </mat-form-field>
+
+          <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+              <mat-label> TELEFONE CONTATO 2</mat-label>
+              <input type="tel" matInput placeholder="TELEFONE 2" formControlName="telefone2">
+          </mat-form-field>
+          
+        </div>
+
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+
+          <mat-form-field appearance="outline" fxFlex="25" [style.fontSize]="text">
+            <mat-label> SEGMENTO </mat-label>
+            <mat-select formControlName="segmento">
+                <mat-option value="1">EMPRESA</mat-option>
+                <mat-option value="2">EJ</mat-option>
+                <mat-option value="3">ONG</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+              <mat-label> CEP </mat-label>
+              <input matInput placeholder="CEP" formControlName="cep">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="20" [style.fontSize]="text">
+            <mat-label> ESTADO </mat-label>
+            <mat-select formControlName="estado">
+                <mat-option value="1">MINAS GERAIS</mat-option>
+                <mat-option value="2">SÂO PAULO</mat-option>
+                <mat-option value="3">GOIAS</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="30" [style.fontSize]="text">
+            <mat-label> CIDADE </mat-label>
+            <mat-select formControlName="cidade">
+                <mat-option value="1">Uberaba</mat-option>
+                <mat-option value="2">Uberlandia</mat-option>
+                <mat-option value="3">São Paulo</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          
+        </div>
+        
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+
+          <mat-form-field fxFlex="60" appearance="outline" [style.fontSize]="text">
+              <mat-label> LOGADOURO </mat-label>
+              <input matInput placeholder="LOGADOURO" formControlName="logadouro">
+          </mat-form-field>  
+        
+          <mat-form-field fxFlex="15" appearance="outline" [style.fontSize]="text">
+              <mat-label> NUMERO </mat-label>
+              <input matInput placeholder="NUMERO" formControlName="numero">
+          </mat-form-field>
+              
+          <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+              <mat-label> COMPLEMENTO </mat-label>
+              <input matInput placeholder="COMPLEMENTO" formControlName="complemento">
+          </mat-form-field>
+
+        </div>
+
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+        
+          <mat-form-field fxFlex="50" appearance="outline" [style.fontSize]="text">
+              <mat-label> INCLUIR PARTICIPAÇÃO </mat-label>
+              <textarea matInput placeholder="HISTORICO" formControlName="historico"></textarea>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="50" appearance="outline" [style.fontSize]="text">
+              <mat-label> OBSERVAÇÃO </mat-label>
+              <textarea matInput placeholder="OBSERVAÇÃO" formControlName="observacao"></textarea>
+          </mat-form-field>
+
+        </div>
+        
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+    
+          <ngx-dropzone fxFlex="100" class="custom-dropzone" 
+            label="SELECIONE UMA LOGO DA ENTIDADE"
+            [showPreviews]="true" [multiple]="false" [accept]="'image/png,image/jpeg'" [maxFileSize]="10000"
+            (filesAdded)="onFilesAdded($event)" (filesRejected)="onFilesRejected($event)">
+          </ngx-dropzone>
+          
+        </div>
+
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+        
+        <button fxFlex="20" mat-raised-button type="button" color="warn">
+            LIMPAR LOGO
+        </button>
+
+        </div>
+        
+       <br>
+
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+
+          <button fxFlex="10" mat-raised-button type="submit" color="" (click)="salvar()">
+              GRAVAR
+          </button>
+
+          <button fxFlex="10" mat-raised-button type="button" color="warn" (click)="cancelar()">
+              CANCELAR
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <br>
+
+    
+    <mat-accordion>
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+        
+        <mat-expansion-panel fxFlex="100">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              HISTORICO DE PARTICIPAÇÕES
+            </mat-panel-title>
+            <mat-panel-description>
+              PARTICIPAÇÕES FEITAS PELA ENTIDADE
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-list>
+              <mat-list-item>Ação 1</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Ação 2</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Ação 3</mat-list-item>
+            </mat-list>
+
+        </mat-expansion-panel>
+        <!--<mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+           <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel> -->
+      </div>
+      </mat-accordion>     
+
+  </div>
+
+  <div class="pr-12 pl-12 pt-12 pb-12" *ngIf="!exibir">
+    <div class="container funds pr-0 pl-12 pt-12 pb-12" fxLayout fxLayout.xs="column" fxLayoutAlign="star"
+        fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <button mat-raised-button color="" (click)="novoMembro()">
+            + INSERIR NOVO PARCEIRO
+        </button>
+    </div>
+  
+  </div>
+
+</div>

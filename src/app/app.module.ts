@@ -16,13 +16,17 @@ import { fuseConfig } from 'app/fuse-config';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
+import { MembrosModule } from './main/auth/cadastro-gerais/membros/membros.module';
+import { ParceirosModule } from './main/auth/cadastro-gerais/parceiros/parceiros.module';
+
 
 const appRoutes: Routes = [
+
     {
         path      : '**',
         redirectTo: 'sample'
     }
-];
+]; 
 
 @NgModule({
     declarations: [
@@ -50,7 +54,9 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        SampleModule
+        SampleModule,
+        MembrosModule,
+        ParceirosModule
     ],
     bootstrap   : [
         AppComponent

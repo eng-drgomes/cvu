@@ -1,0 +1,32 @@
+.mat-form-field {
+    margin-right: 12px;
+  }
+
+  .fondo {
+    background: #C5C6CB
+  }
+
+  
+  
+  .funds {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+  }
+
+  ngx-dropzone {
+    margin: 20px;
+   
+    &.custom-dropzone {
+      height: 250px;
+      background: #FFFFFF;
+      color: black;
+      border: 2px dashed black;
+      border-radius: 5px;
+      font-size: 20px;
+   
+      &.hovered {
+        border-style: solid;
+      }
+    }
+  }

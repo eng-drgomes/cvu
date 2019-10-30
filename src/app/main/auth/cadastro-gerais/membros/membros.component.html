@@ -1,0 +1,190 @@
+<div class="page-layout simple fullwidth" fusePerfectScrollbar>
+    <div class="pr-12 pl-12 pt-12 pb-12" *ngIf="exibir">
+        <div class="funds container pr-0 pl-12 pt-12 pb-12" fxLayout
+            fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px" fxLayoutGap.xs="0">
+            + INSERIR NOVO MEMBRO
+        </div>
+
+        <br><br>
+
+        <div class="formGroup funds pr-10 pl-1 pt-20 pb-20">
+
+            <form [formGroup]="formMembros" autocomplete="off">
+                <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+                    fxLayoutGap.xs="0">
+
+                    <mat-form-field fxFlex="50" appearance="outline" [style.fontSize]="text">
+                        <mat-label> NOME DO MEMBRO </mat-label>
+                        <input type="text" class="form-control" matInput placeholder="NOME MEMBRO" formControlName="nome">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> C.P.F </mat-label>
+                        <input type="number" matInput placeholder="C.P.F" formControlName="cpf">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> DATA DE NASCIMENTO </mat-label>
+                        <input matInput [matDatepicker]="dataNascimento" placeholder="DATA DE NASCIMENTO"
+                            (dateInput)="addEvent('input', $event, 'dataNascimento')" (dateChange)="addEvent('change', $event, 'dataNascimento')">
+                        <mat-datepicker-toggle matSuffix [for]="dataNascimento"></mat-datepicker-toggle>
+                        <mat-datepicker #dataNascimento></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+                    fxLayoutGap.xs="0">
+
+                    <mat-form-field fxFlex="20" appearance="outline" [style.fontSize]="text">
+                        <mat-label> CEP </mat-label>
+                        <input matInput placeholder="CEP" formControlName="cep">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="20" [style.fontSize]="text">
+                        <mat-label> ESTADO (NATURALIDADE) </mat-label>
+                        <mat-select formControlName="estado">
+                            <mat-option value="1">MINAS GERAIS</mat-option>
+                            <mat-option value="2">SÂO PAULO</mat-option>
+                            <mat-option value="3">GOIAS</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="20" [style.fontSize]="text">
+                        <mat-label> CIDADE (NATURALIDADE) </mat-label>
+                        <mat-select formControlName="cidade">
+                            <mat-option value="1">Uberaba</mat-option>
+                            <mat-option value="2">Uberlandia</mat-option>
+                            <mat-option value="3">São Paulo</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="40" appearance="outline" [style.fontSize]="text">
+                        <mat-label> LOGADOURO (UBERABA) </mat-label>
+                        <input matInput placeholder="LOGADOURO (UBERABA)" formControlName="logadouro">
+                    </mat-form-field>
+                    
+                </div>
+                
+                <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+                fxLayoutGap.xs="0">
+                
+                    <mat-form-field fxFlex="20" appearance="outline" [style.fontSize]="text">
+                        <mat-label> NUMERO (UBERABA) </mat-label>
+                        <input matInput placeholder="NUMERO" formControlName="numero">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30" appearance="outline" [style.fontSize]="text">
+                        <mat-label> COMPLEMENTO (UBERABA) </mat-label>
+                        <input matInput placeholder="COMPLEMENTO" formControlName="complemento">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> TELEFONE CONTATO 1</mat-label>
+                        <input type="tel" matInput placeholder="TELEFONE 1" formControlName="telefone1">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> TELEFONE CONTATO 2</mat-label>
+                        <input type="tel" matInput placeholder="TELEFONE 2" formControlName="telefone2">
+                    </mat-form-field>
+                    
+                </div>
+                
+                <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+                fxLayoutGap.xs="0">
+                
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> E-MAIL CONTATO </mat-label>
+                        <input type="email" matInput placeholder="E-MAIL" formControlName="email">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30" appearance="outline" [style.fontSize]="text">
+                        <mat-label> INSTITUIÇÃO DE ENSINO </mat-label>
+                        <input matInput placeholder="INSTITUIÇÃO DE ENSINO" formControlName="instituicaoEnsino">
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30" appearance="outline" [style.fontSize]="text">
+                        <mat-label> CURSO </mat-label>
+                        <input matInput placeholder="CURSO" formControlName="curso">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="15" [style.fontSize]="text">
+                        <mat-label> INFORME O PERIODO </mat-label>
+                        <mat-select formControlName="periodo">
+                            <mat-option value="1">1 PERIODO 1</mat-option>
+                            <mat-option value="2">2 PERIODO 2</mat-option>
+                            <mat-option value="3">3 PERIODO 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    
+                </div>
+                
+                <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="star" fxLayoutGap="10px"
+                fxLayoutGap.xs="0">
+                
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> PREVISÃO DE FORMATURA </mat-label>
+                        <input matInput [matDatepicker]="previsaoFormatura" placeholder="PREVISÃO DE FORMATURA"
+                        (dateInput)="addEvent('input', $event, 'previsaoFormatura')" (dateChange)="addEvent('change', $event, 'previsaoFormatura')">
+                        <mat-datepicker-toggle matSuffix [for]="previsaoFormatura"></mat-datepicker-toggle>
+                        <mat-datepicker #previsaoFormatura></mat-datepicker>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" fxFlex="20" [style.fontSize]="text">
+                        <mat-label> DIRETORIA </mat-label>
+                        <mat-select formControlName="diretoria">
+                            <mat-option value="1">FINANCEIRA</mat-option>
+                            <mat-option value="2">TESOURARIA</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="20" [style.fontSize]="text">
+                        <mat-label> GRUPO USUARIO </mat-label>
+                        <mat-select formControlName="grupoUsuario">
+                            <mat-option value="1">DIRETORIA</mat-option>
+                            <mat-option value="2">TESOURARIA</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="25" appearance="outline" [style.fontSize]="text">
+                        <mat-label> DATA ENTRADA CVU </mat-label>
+                        <input matInput [matDatepicker]="entradaCvu" placeholder="DATA ENTRADA CVU"
+                        (dateInput)="addEvent('input', $event, 'entradaCvu')" (dateChange)="addEvent('change', $event, 'entradaCvu')">
+                        <mat-datepicker-toggle matSuffix [for]="entradaCvu"></mat-datepicker-toggle>
+                        <mat-datepicker #entradaCvu></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+
+                <br>
+
+                <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px"
+                    fxLayoutGap.xs="0">
+
+                    <button fxFlex="10" mat-raised-button type="submit" color="" (click)="salvar()">
+                        GRAVAR
+                    </button>
+
+                    <button fxFlex="10" mat-raised-button type="button" color="warn" (click)="cancelar()">
+                        CANCELAR
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="pr-12 pl-12 pt-12 pb-12" *ngIf="!exibir">
+        <div class="container funds pr-0 pl-12 pt-12 pb-12" fxLayout fxLayout.xs="column" fxLayoutAlign="star"
+            fxLayoutGap="10px" fxLayoutGap.xs="0">
+            <button mat-raised-button color="" (click)="novoMembro()">
+                + INSERIR NOVO MEMBRO
+            </button>
+        </div>
+    
+    </div>
+
+</div>

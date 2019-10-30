@@ -2,22 +2,22 @@ import { FuseNavigation } from '@fuse/types';
 
 export const navigation: FuseNavigation[] = [
     {
-        id       : 'applications',
-        title    : 'Applications',
-        type     : 'group',
+        id       : 'cadastro-gerais',
+        title    : 'Cadastro Gerais',
+        type     : 'collapsable',
         children : [
             {
-                id       : 'sample',
-                title    : 'Sample',
+                id       : 'membros',
+                title    : 'Membros',
                 type     : 'item',
-                icon     : 'email',
-                url      : '/sample',
-                badge    : {
-                    title    : '25',
-                    bg       : '#F44336',
-                    fg       : '#FFFFFF'
-                }
-            }
+                url      : '/membros'
+            },
+            {
+                id       : 'parceiros',
+                title    : 'Parceiros',
+                type     : 'item',
+                url      : '/parceiros'
+            },
         ]
     }
 ];
